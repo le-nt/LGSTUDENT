@@ -321,39 +321,14 @@ html.hc a{text-decoration:underline}html.hc :focus-visible{outline-width:4px}
 <script>
 /* ---- EDIT THESE: settings and placeholder content ---- */
 var SD_ONION=""; /* SecureDrop is not used. Leave this empty. */
-var REPORT_EMAIL="reports@example.org"; /* disclosures are sent here; email is not anonymous */
-var PGP_FP="";        /* paste your key fingerprint */
-var CANARY_DATE="";   /* YYYY-MM-DD you last signed the canary; it shows as overdue after 35 days */
+var REPORT_EMAIL="LGSVIRB-support@proton.me"; /* disclosures are sent here; email is not anonymous */
+var PGP_FP=""wehrewrherwherh;        /* paste your key fingerprint */
+var CANARY_DATE="2026-21-10";   /* YYYY-MM-DD you last signed the canary; it shows as overdue after 35 days */
 var CANARY_TEXT="";   /* the statement you are prepared to stand behind */
 var ONION_LOCATION="";/* your site onion address, e.g. http://abc...xyz.onion */
 var CASES=[
- {id:"FL-2025-0112",name:"Callum Ardrey",cat:"Misuse of resources",status:"Substantiated",filed:"2025-01-12",dir:"Directorate of Review",ids:["VOL-20418"],aliases:["C. Ardrey","Cal A"],
-  sum:"A disclosure alleged that event funds were spent on items the organisation had not approved. Receipts were examined and {{the organiser was interviewed}}. The expenditure was found to breach the organisation’s own rules, and a repayment plan was agreed.",
-  ev:[["2025-01-12","Disclosure received and logged by the Office of Intake."],["2025-01-28","Receipts examined by the Directorate of Verification."],["2025-02-10","Finding recorded; repayment plan agreed."]],
-  docs:[["Intake summary","PDF","96 KB"],["Finding of the Directorate","PDF","120 KB"]]},
- {id:"FL-2025-0207",name:"Imogen Fairweather",cat:"Falsified records",status:"Under review",filed:"2025-02-07",dir:"Directorate of Verification",ids:["VOL-31770"],aliases:["I. Fairweather","Immy F"],
-  sum:"A disclosure alleged that volunteer hours claimed for an award do not match host records. Sign-off sheets are being cross-checked with {{three host organisations}}.",
-  ev:[["2025-02-07","Disclosure received."],["2025-03-03","Host organisations contacted."],["2025-04-14","Two of three sign-offs confirmed."]],
-  docs:[["Hours claim","PDF","210 KB"],["Host confirmation request","PDF","88 KB"]]},
- {id:"FL-2024-0930",name:"Northside Youth Pantry",cat:"Safety",status:"Not substantiated",filed:"2024-09-30",dir:"Directorate of Review",ids:["ORG-4402"],aliases:["Northside Pantry","NYP"],
-  sum:"A disclosure alleged that a partner organisation lacked required safeguarding paperwork. {{Safeguarding and insurance documents}} were examined and found in order. The disclosure was not substantiated.",
-  ev:[["2024-09-30","Disclosure received."],["2024-10-21","Documents examined."],["2024-11-04","Closed: not substantiated."]],
-  docs:[["Closing note","PDF","74 KB"]]},
- {id:"FL-2024-0618",name:"Rowan Teague",cat:"Retaliation",status:"Substantiated",filed:"2024-06-18",dir:"Directorate of Review",ids:["VOL-18893"],aliases:["R. Teague","ro_teague"],
-  sum:"A volunteer who raised a concern was removed from the schedule soon afterwards. The review found the removal was linked to the concern. {{The volunteer was reinstated}} and the organiser received a formal warning.",
-  ev:[["2024-06-18","Retaliation disclosure received and prioritised."],["2024-07-09","Interviews completed."],["2024-07-30","Finding recorded; volunteer reinstated."]],
-  docs:[["Finding of the Directorate","PDF","102 KB"],["Reinstatement notice","PDF","66 KB"]]},
- {id:"FL-2025-0319",name:"Delphine Okoro",cat:"Harassment",status:"Under review",filed:"2025-03-19",dir:"Directorate of Review",ids:["VOL-27051"],aliases:["D. Okoro","Del O"],
-  sum:"A disclosure described repeated exclusionary and hostile behaviour at organisation events. {{Witness accounts}} are being gathered. The person named has been notified in writing and invited to respond.",
-  ev:[["2025-03-19","Disclosure received."],["2025-04-02","Person named notified in writing."]],
-  docs:[["Notice to person named","PDF","80 KB"]]}
 ];
-var NOTICES=[
- {d:"2025-05-12",t:"Guidance issued: protecting your identity when you disclose",c:"Guidance",b:"FLARE has published guidance on keeping your own evidence, choosing a safe device, and using the Quick exit control on every page."},
- {d:"2025-04-28",t:"Disclosure window extended for the spring term",c:"Notice",b:"Disclosures concerning spring term activity may be filed up to 30 days after the term ends. Late disclosures need only a short reason for the delay."},
- {d:"2025-02-02",t:"Retaliation disclosures now reviewed first",c:"Policy",b:"Any disclosure that someone was penalised for speaking up is now reviewed ahead of all other new disclosures."},
- {d:"2025-01-06",t:"Annual review of the findings register completed",c:"Report",b:"Closed findings older than five years were reviewed. Entries beyond the retention limit were archived."}
-];
+var NOTICES=[];
 var DIRS=[
  ["Office of Intake","Receives","Logs every disclosure, confirms it is complete and routes it. Never reveals who disclosed."],
  ["Directorate of Verification","Examines","Tests claims against documents, records and independent sources."],
