@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Student Volunteer Information & Reporting Bureau</title>
+<meta name="description" content="A safe, fair way to speak up when something is wrong. An independent group, not affiliated with the Lake Geneva School District.">
+<meta name="theme-color" content="#0F1B24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7;--panel:#FFFFFF;--ink:#0F1B24;--muted:#52636F;--rule:#D7DFE5;
+  --btn:#0F4C5C;--btn-ink:#FFFFFF;--amber:#FFB000;--soft:#FFF0C7;--side:#0F1B24;--link:#0F5E73;
+  --ok:#1F6A45;--warn:#8A5A00;--bad:#A12B2B;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1218;--panel:#131F29;--ink:#E8EEF2;--muted:#9DB0BD;--rule:#25384A;
+    --btn:#5FB4C9;--btn-ink:#0B1218;--soft:#3A3012;--side:#070D12;--link:#7CC4D8;
+    --ok:#8FD9AE;--warn:#EBC46E;--bad:#F4A3A3;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1218;--panel:#131F29;--ink:#E8EEF2;--muted:#9DB0BD;--rule:#25384A;
+  --btn:#5FB4C9;--btn-ink:#0B1218;--soft:#3A3012;--side:#070D12;--link:#7CC4D8;
+  --ok:#8FD9AE;--warn:#EBC46E;--bad:#F4A3A3;color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.app{display:grid;grid-template-columns:276px minmax(0,1fr);min-height:100vh}
+.side{background:var(--side);color:#DCE6EC;padding:26px 18px 20px;position:sticky;top:0;height:100vh;overflow:auto;display:flex;flex-direction:column;gap:20px}
+.brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:#fff}
+.logo{width:46px;height:44px;color:var(--amber);flex:none}
+.brand b{display:block;font:800 15px/1.2 var(--head)}
+.brand small{display:block;font:500 12px/1.3 var(--body);color:#9FB2BE;margin-top:4px}
+.snav{display:flex;flex-direction:column;gap:2px}
+.snav a{display:block;padding:10px 12px;border-radius:8px;color:#C5D3DC;text-decoration:none;font-weight:600;font-size:15px;border-left:3px solid transparent}
+.snav a:hover{background:rgba(255,255,255,.07);color:#fff}
+.snav a[aria-current="page"]{background:rgba(255,176,0,.14);color:var(--amber);border-left-color:var(--amber)}
+.snav a.go{background:var(--amber);color:#0F1B24;font-weight:800;text-align:center;margin:6px 0 8px;border-left:0}
+.snav a.go:hover{filter:brightness(1.07);color:#0F1B24}
+.sidefoot{margin-top:auto;display:grid;gap:10px;font-size:12.5px;color:#9FB2BE;line-height:1.5}
+.exit{background:#2A3945;color:#fff;border:1px solid #3B4F5E;border-radius:8px;padding:10px;font:700 14px var(--body);cursor:pointer}
+.exit:hover{background:#B3261E;border-color:#B3261E}
+.tg{background:none;border:1px solid #3B4F5E;color:#C5D3DC;border-radius:8px;padding:7px;font:600 13px var(--body);cursor:pointer}
+.note{background:var(--soft);padding:10px 40px;font:600 14px/1.5 var(--body)}
+.page{padding:40px 40px 8px;max-width:980px}
+h1{font:800 clamp(32px,5.5vw,56px)/1.05 var(--head);letter-spacing:-.02em;margin:0 0 16px;max-width:15em}
+h1.sm{font-size:clamp(28px,4vw,40px);max-width:none}
+h2{font:800 26px/1.2 var(--head);margin:46px 0 14px}
+h2::before{content:"";display:block;width:34px;height:4px;background:var(--amber);margin-bottom:10px}
+h3{font:800 18px/1.3 var(--head);margin:0 0 4px}
+.lede{font-size:19px;color:var(--muted);max-width:36em;margin:0 0 24px}
+.prose{max-width:44em}
+.hero{position:relative;padding-bottom:34px;border-bottom:1px solid var(--rule);overflow:hidden}
+.wm{position:absolute;right:-20px;top:-6px;width:250px;opacity:.07;color:var(--ink);pointer-events:none}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;background:var(--btn);color:var(--btn-ink);border:2px solid var(--btn);font:800 16px var(--body);padding:12px 24px;border-radius:10px;text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.12)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.sigs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.sigs div{border-left:4px solid var(--amber);padding:2px 0 2px 14px;font-weight:700;line-height:1.4}
+.sigs span{display:block;font-weight:500;color:var(--muted);font-size:15px;margin-top:3px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;border-top:4px solid var(--ink);padding:14px 20px 0 0}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:800 14px var(--head);color:var(--muted);margin-bottom:4px}
+.steps b{display:block;font:800 18px var(--head)}
+.steps span{color:var(--muted);font-size:15px}
+.panel{background:var(--panel);border:1px solid var(--rule);border-radius:14px;padding:22px 24px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.checks li{position:relative;padding-left:30px}
+.checks li::before{content:"\2713";position:absolute;left:0;color:var(--ok);font-weight:800}
+.callout{background:var(--soft);border-radius:12px;padding:14px 18px;margin:0 0 22px;max-width:700px;font-size:16px}
+.search{display:flex;gap:10px}
+.search input{flex:1;min-width:0;border:2px solid var(--rule);background:var(--panel);color:var(--ink);font:600 17px var(--body);padding:13px 16px;border-radius:10px}
+.search input:focus{outline:none;border-color:var(--btn)}
+.hint{color:var(--muted);font-size:14px;margin:8px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}
+.chip{border:2px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:999px;padding:5px 14px;font:700 13.5px var(--body);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count{margin:26px 0 10px;color:var(--muted);font-size:15px;font-weight:600}
+.cases{display:grid;gap:10px;list-style:none;margin:0;padding:0}
+.case{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:16px 20px;background:var(--panel);border:1px solid var(--rule);border-left:6px solid var(--c,var(--rule));border-radius:12px;text-decoration:none;color:var(--ink)}
+.case:hover{box-shadow:0 4px 16px rgba(15,27,36,.12)}
+.case b{font:800 19px/1.3 var(--head)}
+.case small{color:var(--muted);font-size:14px;font-weight:600;grid-column:1}
+.case em{grid-column:1;font-style:normal;font-size:15px}
+mark{background:var(--soft);color:inherit;padding:0 3px;border-radius:3px;border-bottom:2px solid var(--amber)}
+.st{grid-column:2;grid-row:1;align-self:start;font:800 13px var(--body);white-space:nowrap;color:var(--c)}
+.st::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--c);margin-right:6px}
+.rev{--c:var(--warn)}.sub{--c:var(--ok)}.not{--c:var(--muted)}
+.empty{padding:28px;color:var(--muted);border:2px dashed var(--rule);border-radius:12px}
+.back{display:inline-block;margin-bottom:18px;font-weight:700}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden;margin:20px 0}
+.facts div{background:var(--panel);padding:12px 16px}
+.facts small{display:block;color:var(--muted);font-size:13px;font-weight:600}
+.facts b{font-weight:700;overflow-wrap:anywhere}
+.red{background:var(--ink);color:var(--ink);border-radius:3px;user-select:none}
+.tl{list-style:none;margin:0 0 0 8px;padding:0 0 0 22px;border-left:3px solid var(--rule)}
+.tl li{position:relative;padding-bottom:18px}
+.tl li::before{content:"";position:absolute;left:-32px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--amber);border:3px solid var(--bg)}
+.tl time{display:block;color:var(--muted);font-size:14px;font-weight:700}
+.docs{list-style:none;margin:0;padding:0;background:var(--panel);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.docs li{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;border-bottom:1px solid var(--rule)}
+.docs li:last-child{border-bottom:0}
+.docs span{color:var(--muted);font-size:14px;white-space:nowrap}
+.bl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bl li{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:16px 20px}
+.bl time{color:var(--muted);font-size:14px;font-weight:600}
+.tag{background:var(--soft);padding:1px 10px;border-radius:999px;font:800 12px var(--body);margin-left:8px;color:var(--ink)}
+.bl p{margin:4px 0 0;max-width:46em}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid p{margin:0;font-size:15.5px}
+.grid small{display:block;color:var(--muted);font-weight:600;margin-bottom:6px}
+form.f{display:grid;gap:18px;max-width:660px}
+.f label{display:block;font:800 15px var(--body);margin-bottom:6px}
+.f input,.f select,.f textarea{width:100%;border:2px solid var(--rule);background:var(--panel);color:var(--ink);font:600 16px var(--body);padding:11px 14px;border-radius:10px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--btn)}
+.f textarea{min-height:160px;resize:vertical}
+.f .help{font-size:14px;color:var(--muted);margin:5px 0 0}
+.f .chk{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.f .chk input{width:auto;margin-top:5px}
+.f button{justify-self:start}
+details{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:14px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:800}
+details p{margin:10px 0 2px;color:var(--muted)}
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:r}
+.rules li{counter-increment:r;display:grid;grid-template-columns:40px 1fr;gap:10px;padding:16px 20px;background:var(--panel);border:1px solid var(--rule);border-radius:12px}
+.rules li::before{content:counter(r);display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--amber);color:#0F1B24;font:800 15px var(--head)}
+.rules b{display:block}.rules span{color:var(--muted)}
+.foot{border-top:1px solid var(--rule);margin:44px 40px 0;padding:22px 0 40px;color:var(--muted);font-size:14px;max-width:900px}
+.foot b{color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:900px){
+  .app{grid-template-columns:1fr}
+  .side{position:static;height:auto;padding:16px 18px;gap:12px}
+  .snav{flex-direction:row;overflow-x:auto;gap:4px}
+  .snav a{white-space:nowrap;border-left:0;border-bottom:3px solid transparent;border-radius:8px 8px 0 0}
+  .snav a[aria-current="page"]{border-bottom-color:var(--amber)}
+  .snav a.go{margin:0}
+  .sidefoot{display:flex;flex-wrap:wrap;align-items:center}.sidefoot p{display:none}
+  .note,.page{padding-left:20px;padding-right:20px}.foot{margin:36px 20px 0}
+  .sigs,.two,.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr;row-gap:20px}
+  .wm{width:150px}
+}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.search{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+  <a class="brand" href="#"><svg class="logo" viewBox="219 491 993 934" role="img" aria-label="Bureau logo"><path fill="currentColor" d="M229 737H388V1274H952V1415H229Z M514 501H1202V641H663V1001H1083V866H802V734H1202V1149H514Z"/></svg><span><b>Student Volunteer Information &amp; Reporting Bureau</b><small>In Service of Truth and Security.</small></span></a>
+  <nav class="snav" id="nav" aria-label="Main">
+    <a class="go" href="#report" data-p="report">Make a report</a>
+    <a href="#" data-p="">Home</a>
+    <a href="#how" data-p="how">How it works</a>
+    <a href="#cases" data-p="cases">Public case files</a>
+    <a href="#safety" data-p="safety">Protect yourself</a>
+    <a href="#news" data-p="news">News</a>
+    <a href="#contact" data-p="contact">Contact</a>
+    <a href="#about" data-p="about">About us</a>
+  </nav>
+  <div class="sidefoot">
+    <button class="exit" id="exit" type="button">Quick exit</button>
+    <button class="tg" id="theme" type="button" aria-label="Switch display theme">Light / dark</button>
+    <p>Independent group. Not affiliated with the Lake Geneva School District.</p>
+  </div>
+</aside>
+<div class="main">
+  <div class="note">An independent group. Not directly affiliated with, or working with, the Lake Geneva School District. In an emergency, contact local emergency services first.</div>
+  <main class="page" id="app"></main>
+  <div class="foot"><p><b>Student Volunteer Information &amp; Reporting Bureau</b> · In Service of Truth and Security.</p><p><b>Disclaimer:</b> This bureau is an independent group. It is not directly affiliated with, and does not work with, the Lake Geneva School District. Nothing on this site represents the views, policies or records of the district or its schools. Nothing here is legal advice. All records shown are placeholder examples.</p></div>
+</div>
+</div>
+
+<script>
+/* ---- EDIT THESE: placeholder data and settings ---- */
+var REPORT_EMAIL="reports@example.org";
+var CASES=[
+ {id:"SV-2025-0112",name:"Callum Ardrey",cat:"Misuse of resources",status:"Substantiated",filed:"2025-01-12",div:"Case Review Division",ids:["VOL-20418"],aliases:["C. Ardrey","Cal A"],
+  sum:"A report said event funds were spent on items the group had not approved. Receipts were reviewed and {{the organiser was interviewed}}. The spending broke the group’s own rules, and a repayment plan was agreed.",
+  ev:[["2025-01-12","Report received and logged."],["2025-01-28","Receipts reviewed by the Verification Division."],["2025-02-10","Finding recorded; repayment plan agreed."]],
+  docs:[["Intake summary","PDF","96 KB"],["Finding","PDF","120 KB"]]},
+ {id:"SV-2025-0207",name:"Imogen Fairweather",cat:"Falsified records",status:"Under review",filed:"2025-02-07",div:"Verification Division",ids:["VOL-31770"],aliases:["I. Fairweather","Immy F"],
+  sum:"A report said volunteer hours claimed for an award did not match host records. Sign-off sheets are being cross-checked with {{three host organisations}}.",
+  ev:[["2025-02-07","Report received."],["2025-03-03","Host organisations contacted."],["2025-04-14","Two of three sign-offs confirmed."]],
+  docs:[["Hours claim","PDF","210 KB"],["Host confirmation request","PDF","88 KB"]]},
+ {id:"SV-2024-0930",name:"Northside Youth Pantry",cat:"Safety",status:"Not substantiated",filed:"2024-09-30",div:"Case Review Division",ids:["ORG-4402"],aliases:["Northside Pantry","NYP"],
+  sum:"A report said a partner organisation lacked required safeguarding paperwork. {{Safeguarding and insurance documents}} were reviewed and found in order, so the report was not substantiated.",
+  ev:[["2024-09-30","Report received."],["2024-10-21","Documents reviewed."],["2024-11-04","Closed: not substantiated."]],
+  docs:[["Closing note","PDF","74 KB"]]},
+ {id:"SV-2024-0618",name:"Rowan Teague",cat:"Retaliation",status:"Substantiated",filed:"2024-06-18",div:"Case Review Division",ids:["VOL-18893"],aliases:["R. Teague","ro_teague"],
+  sum:"A volunteer who raised a concern was taken off the schedule soon afterwards. The review found the removal was linked to the concern. {{The volunteer was reinstated}} and the organiser received a formal warning.",
+  ev:[["2024-06-18","Retaliation report received."],["2024-07-09","Interviews completed."],["2024-07-30","Finding recorded; volunteer reinstated."]],
+  docs:[["Finding","PDF","102 KB"],["Reinstatement notice","PDF","66 KB"]]},
+ {id:"SV-2025-0319",name:"Delphine Okoro",cat:"Harassment",status:"Under review",filed:"2025-03-19",div:"Case Review Division",ids:["VOL-27051"],aliases:["D. Okoro","Del O"],
+  sum:"A report described repeated unkind and exclusionary behaviour at group events. {{Witness accounts}} are being gathered, and the person reported has been notified in writing and invited to respond.",
+  ev:[["2025-03-19","Report received."],["2025-04-02","Person reported notified in writing."]],
+  docs:[["Notice to person reported","PDF","80 KB"]]}
+];
+var NEWS=[
+ {d:"2025-05-12",t:"New guide: protecting yourself when you report",c:"Guidance",b:"Our Protect yourself page explains how to keep your own copy of evidence, which devices to avoid, and how to use the Quick exit button."},
+ {d:"2025-04-28",t:"Reporting window extended for the spring term",c:"Notice",b:"Reports about spring term activity can now be filed up to 30 days after the term ends. Late reports only need a short reason for the delay."},
+ {d:"2025-02-02",t:"Retaliation reports now fast-tracked",c:"Policy",b:"Any report that someone was treated badly for speaking up is now reviewed first, ahead of other new reports."},
+ {d:"2025-01-06",t:"Annual review of the case register completed",c:"Report",b:"Closed cases older than five years were reviewed, and entries past the retention limit were archived."}
+];
+var DIVS=[
+ ["Intake Desk","Receives every report","Logs reports, checks they are complete, and sends them to the right division. Never shares who reported."],
+ ["Verification Division","Checks the facts","Compares claims against documents, records and independent sources."],
+ ["Case Review Division","Decides outcomes","Interviews the person reported, weighs the evidence and records a finding."],
+ ["Records and Corrections Office","Keeps the register honest","Maintains public case files, handles correction requests and applies retention rules."]
+];
+var STEPS='<li><b>You report</b><span>Tell us what happened in your own words.</span></li><li><b>We review</b><span>The Intake Desk logs it and picks the right division.</span></li><li><b>We verify</b><span>Facts and documents are checked. The person reported is told and can respond.</span></li><li><b>We record</b><span>The outcome is published as a case file. Your identity is not shown.</span></li>';
+var CATS=["All","Misuse of resources","Falsified records","Safety","Retaliation","Harassment"];
+var STAT={"Under review":"rev","Substantiated":"sub","Not substantiated":"not"};
+/* --------------------------------------------------- */
+var app=document.getElementById("app"),state={q:"",cat:"All"};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function rd(t){return esc(t).replace(/\{\{(.+?)\}\}/g,function(m,x){return '<span class="red" title="Withheld to protect privacy">'+x.replace(/\S/g,"\u2588")+'</span>'})}
+function hl(t,q){var i=q?t.toLowerCase().indexOf(q.toLowerCase()):-1;return i<0?esc(t):esc(t.slice(0,i))+"<mark>"+esc(t.slice(i,i+q.length))+"</mark>"+esc(t.slice(i+q.length))}
+function fmt(d){var p=d.split("-"),m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return m[+p[1]-1]+" "+(+p[2])+", "+p[0]}
+function show(h,t){app.innerHTML=h;document.title=(t?t+" · ":"")+"Student Volunteer Information & Reporting Bureau";window.scrollTo(0,0)}
+function find(q){q=q.trim().toLowerCase();return CASES.map(function(c){
+  if(state.cat!=="All"&&c.cat!==state.cat)return null;
+  if(!q||c.name.toLowerCase().indexOf(q)>-1||c.id.toLowerCase().indexOf(q)>-1)return{c:c};
+  var a=c.aliases.filter(function(x){return x.toLowerCase().indexOf(q)>-1})[0];if(a)return{c:c,via:["Known alias",a]};
+  var n=c.ids.filter(function(x){return x.toLowerCase().indexOf(q)>-1})[0];if(n)return{c:c,via:["ID number",n]};return null}).filter(Boolean)}
+function rows(out,q){return out.length?'<ul class="cases">'+out.map(function(o){var c=o.c;return '<li><a class="case '+STAT[c.status]+'" href="#'+c.id+'"><b>'+hl(c.name,q)+'</b><span class="st">'+c.status+'</span><small>'+c.id+' · '+esc(c.cat)+' · Filed '+fmt(c.filed)+'</small>'+(o.via?'<em>'+o.via[0]+': '+hl(o.via[1],q)+'</em>':'')+'</a></li>'}).join("")+'</ul>':'<div class="empty">No case files match. Check the spelling, try a shorter name, or search by ID number.</div>'}
+function news(n){return '<ul class="bl">'+NEWS.slice(0,n).map(function(x){return '<li><time>'+fmt(x.d)+'</time><span class="tag">'+x.c+'</span><h3>'+esc(x.t)+'</h3><p>'+esc(x.b)+'</p></li>'}).join("")+'</ul>'}
+var WM='<svg class="wm" viewBox="219 491 993 934" aria-hidden="true"><path fill="currentColor" d="M229 737H388V1274H952V1415H229Z M514 501H1202V641H663V1001H1083V866H802V734H1202V1149H514Z"/></svg>';
+var CHECKS='<ul class="checks"><li>Misconduct or abuse of position by a volunteer or organiser</li><li>Falsified hours, awards or records</li><li>Misuse of funds, equipment or partner resources</li><li>Harassment, bullying or unsafe behaviour at group activities</li><li>Cover-ups, or punishment of someone for speaking up</li></ul>';
+var P={
+ "":function(){
+  show('<section class="hero">'+WM+'<h1>Something not right? Say so, safely.</h1><p class="lede">We are a volunteer whistleblowing bureau. We take reports of wrongdoing seriously, protect the people who come forward, and publish fair, checked outcomes.</p><div class="cta"><a class="btn" href="#report">Make a report</a><a class="btn alt" href="#how">How it works</a></div><div class="sigs"><div>Your identity is withheld<span>From the public record and from the person you report.</span></div><div>Everyone gets a fair hearing<span>The person reported is told and can respond.</span></div><div>Outcomes are public<span>Checked findings appear as case files.</span></div></div></section>'+
+  '<h2>Four steps from report to record</h2><ol class="steps">'+STEPS+'</ol>'+
+  '<h2>Find a public case file</h2><form class="search" id="hf" role="search"><input id="hq" type="search" placeholder="Name, ID number, or alias" aria-label="Search case files" autocomplete="off"><button class="btn" type="submit">Search</button></form><p class="hint">Try “Teague”, “Immy F”, or “VOL-27051”.</p><div style="margin-top:18px">'+rows(CASES.slice().sort(function(a,b){return a.filed<b.filed?1:-1}).slice(0,3).map(function(c){return{c:c}}),"")+'</div><p><a href="#cases"><b>See all case files</b></a></p>'+
+  '<h2>What you can report, and what you can’t</h2><div class="two"><div class="panel"><h3>You can report</h3><br>'+CHECKS+'</div><div class="panel"><h3>We can’t help with</h3><p><b>Immediate danger:</b> call local emergency services.</p><p><b>School matters:</b> discipline, safety and enrolment belong to the Lake Geneva School District, which is separate from this bureau.</p><p><b>Legal advice:</b> nothing here is legal advice.</p></div></div>'+
+  '<h2>Staying safe</h2><div class="callout">Reports are sent by email, so the bureau will see the address they come from. If you need to stay anonymous, use an email account that does not identify you. The <b>Quick exit</b> button in the menu leaves this site at once. <a href="#safety">Read how to protect yourself</a>.</div>'+
+  '<h2>Latest news</h2>'+news(2)+'<p><a href="#news"><b>All news</b></a></p>',"");
+  document.getElementById("hf").addEventListener("submit",function(e){e.preventDefault();state.q=document.getElementById("hq").value;state.cat="All";location.hash="cases"})},
+ how:function(){show('<h1 class="sm">How it works</h1><p class="lede">From your first message to a published outcome, this is exactly what happens.</p><ol class="steps">'+STEPS+'</ol><h2>What you can report</h2><div class="panel">'+CHECKS+'</div><h2>How we protect people who come forward</h2><div class="grid"><div class="panel"><h3>Your name stays private</h3><p>Your identity is withheld from the public record and from the person you report.</p></div><div class="panel"><h3>Retaliation is taken seriously</h3><p>If you are treated badly for speaking up, tell us. It is handled first, as its own report.</p></div><div class="panel"><h3>Fair to everyone</h3><p>The person reported is told and gets a chance to respond before anything is recorded.</p></div><div class="panel"><h3>Honest outcomes</h3><p>Findings rest on documents and statements. Reports that are not substantiated are recorded as such.</p></div></div><h2>Ready?</h2><div class="cta"><a class="btn" href="#report">Make a report</a><a class="btn alt" href="#safety">Protect yourself first</a></div>',"How it works")},
+ cases:function(){
+  show('<h1 class="sm">Public case files</h1><p class="lede">Checked outcomes of reports. Search by name, ID number or known alias. Sources are never shown, and some details are withheld for privacy.</p><form class="search" id="cf" role="search"><input id="q" type="search" placeholder="Name, ID number, or alias" aria-label="Search case files" autocomplete="off" value="'+esc(state.q)+'"><button class="btn" type="submit">Search</button></form><div class="chips" id="chips">'+CATS.map(function(t){return '<button class="chip" type="button" aria-pressed="'+(t===state.cat)+'" data-t="'+esc(t)+'">'+esc(t)+'</button>'}).join("")+'</div><div id="res"></div>',"Public case files");
+  var q=document.getElementById("q");function go(){var o=find(state.q);document.getElementById("res").innerHTML='<p class="count" aria-live="polite">'+o.length+(o.length===1?" case file":" case files")+(state.q.trim()?' matching “'+esc(state.q.trim())+'”':"")+'</p>'+rows(o,state.q.trim())}
+  q.addEventListener("input",function(){state.q=q.value;go()});
+  document.getElementById("cf").addEventListener("submit",function(e){e.preventDefault();go()});
+  document.getElementById("chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;state.cat=b.getAttribute("data-t");[].forEach.call(this.children,function(c){c.setAttribute("aria-pressed",c===b)});go()});go()},
+ report:function(){
+  show('<h1 class="sm">Make a report</h1><p class="lede">Tell us what you saw. Stick to facts you can support. Sources are withheld from the person reported and from the public record.</p><div class="callout"><b>Before you send:</b> this form sends your report by email, so the bureau will see the address it comes from. If you need to stay anonymous, use an email account that does not identify you. If anyone is in immediate danger, contact local emergency services first. This bureau is independent and is not part of the Lake Geneva School District, so it cannot act on school discipline or safety matters. <a href="#safety">How to protect yourself</a></div>'+
+  '<form class="f" id="rf"><div><label for="rt">What kind of problem is it?</label><select id="rt">'+CATS.slice(1).map(function(c){return '<option>'+c+'</option>'}).join("")+'</select></div><div><label for="rs">Who or what is it about?</label><input id="rs" required autocomplete="off"></div><div><label for="rw">When did it happen?</label><input id="rw" autocomplete="off" placeholder="A date or a rough time period"></div><div><label for="rd">What happened?</label><textarea id="rd" required></textarea><p class="help">Describe what you saw yourself, who was there, and what proof exists. Do not include passwords or financial details.</p></div><div><label for="rc">How can we reach you? (optional)</label><input id="rc" autocomplete="off"><p class="help">Only used if a division needs to follow up. Never shown publicly.</p></div><label class="chk"><input type="checkbox" id="rg" required> I am reporting in good faith and believe this is true.</label><button class="btn" type="submit">Send report</button></form>',"Make a report");
+  document.getElementById("rf").addEventListener("submit",function(e){e.preventDefault();var f=function(i){return document.getElementById(i).value},ref="SVR-"+Date.now().toString(36).toUpperCase();
+   var b="Reference: "+ref+"\nCategory: "+f("rt")+"\nAbout: "+f("rs")+"\nWhen: "+(f("rw")||"unknown")+"\nContact: "+(f("rc")||"none")+"\n\n"+f("rd");
+   location.href="mailto:"+REPORT_EMAIL+"?subject="+encodeURIComponent("Report "+ref+" ("+f("rt")+")")+"&body="+encodeURIComponent(b);
+   show('<h1 class="sm">Report prepared</h1><p class="lede">Your email app should now be open with the report ready to send. Your reference number is <b>'+ref+'</b>. Keep it to follow up.</p><div class="cta"><a class="btn" href="#">Back to home</a><button class="btn alt" type="button" onclick="document.getElementById(\'exit\').click()">Quick exit</button></div>',"Report prepared")})},
+ safety:function(){show('<h1 class="sm">Protect yourself</h1><p class="lede">Speaking up is your choice. These steps protect you, the people involved, and the case.</p><div class="callout"><b>Need to leave this site fast?</b> Use the Quick exit button in the menu. It takes you to a neutral website straight away. Closing the tab afterwards helps too.</div><ol class="rules">'+[["Emergencies first","If anyone is in immediate danger, contact local emergency services before the bureau."],["Mind your device","If you need privacy, avoid school-managed devices and accounts. Use a private browsing window and close it when you finish."],["Use a separate email","Reports are sent by email. A new account that does not use your real name keeps your address from identifying you."],["Keep your own copy","Save dates, messages and documents. Do not edit them."],["Stick to facts","Describe what you saw or can show. Do not guess or pass on rumour."],["Do not confront","Please do not approach or warn the person you are reporting."],["Beware impersonation","We never ask for passwords or payments. If someone claims to be the bureau and does, stop and tell us."]].map(function(r){return '<li><div><b>'+r[0]+'</b><span>'+r[1]+'</span></div></li>'}).join("")+'</ol><p class="hint" style="margin-top:22px">This page is general safety advice, not legal advice.</p>',"Protect yourself")},
+ news:function(){show('<h1 class="sm">News</h1><p class="lede">Notices, guidance and policy changes from the bureau.</p>'+news(99),"News")},
+ contact:function(){show('<h1 class="sm">Contact us</h1><p class="lede">Choose the office that matches your enquiry. Please do not send reports to general enquiries; use the report form so they reach the right division.</p><div class="callout"><b>Emergency?</b> Contact local emergency services first. The bureau cannot respond to emergencies. <b>Not the school district:</b> this bureau is independent and is not directly affiliated with, or working with, the Lake Geneva School District.</div><div class="grid"><div class="panel"><small>Reports</small><h3>Make a report</h3><p><a href="#report">Use the report form</a></p></div><div class="panel"><small>General enquiries</small><h3>info@example.org</h3><p>+1 (555) 010-0142</p></div><div class="panel"><small>Records requests</small><h3>records@example.org</h3><p>Include the case number and what you need.</p></div><div class="panel"><small>Corrections</small><h3>corrections@example.org</h3><p>Answered within ten working days.</p></div><div class="panel"><small>Media</small><h3>press@example.org</h3></div><div class="panel"><small>Volunteer with us</small><h3>join@example.org</h3><p>Current students may apply. See About us.</p></div></div><p class="hint" style="margin-top:20px">Mail: Student Volunteer Information &amp; Reporting Bureau, 100 Example Street, Your City. We do not accept walk-in reports.</p>',"Contact")},
+ about:function(){show('<h1 class="sm">About us</h1><p class="prose">The Student Volunteer Information &amp; Reporting Bureau gives people a safe, fair way to speak up when something is wrong, and publishes checked outcomes. Our motto is <b>In Service of Truth and Security.</b></p><h2>Independence</h2><div class="callout">The bureau is an independent group. It is not directly affiliated with, and does not work with, the Lake Geneva School District. It has no authority over district staff, students or schools, and nothing published here is an official statement, policy or record of the district. For school discipline, safety or enrolment matters, contact the district directly.</div><h2>Our divisions</h2><div class="grid">'+DIVS.map(function(d){return '<div class="panel"><small>'+esc(d[1])+'</small><h3>'+esc(d[0])+'</h3><p>'+esc(d[2])+'</p></div>'}).join("")+'</div><h2>Volunteer with us</h2><p class="prose">Current students can help log reports, verify documents and keep case files accurate. Everyone completes short training on privacy and source protection and agrees to the code of conduct. Apply at <a href="mailto:join@example.org">join@example.org</a> with your name, the role you want and your availability.</p><h2>Questions</h2><details><summary>Will I be protected if I report?</summary><p>We withhold your identity from the public record and from the person reported, and we treat retaliation as its own report. We cannot promise outcomes outside the bureau, and this is not legal advice.</p></details><details><summary>Is my report anonymous?</summary><p>Not automatically. Reports arrive by email, so we can see the sending address. Use an email account that does not identify you if you need to stay anonymous.</p></details><details><summary>How do I request a correction?</summary><p>Email the corrections office with the case number, the entry you think is wrong and your evidence. We reply within ten working days.</p></details><details><summary>Can a case file be removed?</summary><p>Case files are archived at their retention limit, or when a review finds them inaccurate.</p></details><details><summary>Who can file a report?</summary><p>Anyone with first-hand knowledge, including volunteers, host organisations and members of the public.</p></details>',"About us")}
+};
+function nav(p){[].forEach.call(document.querySelectorAll("#nav a"),function(a){a.getAttribute("data-p")===p?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")})}
+function detail(id){
+  var c=CASES.filter(function(x){return x.id===id})[0];if(!c){location.hash="";return}
+  show('<a class="back" href="#cases">← Back to case files</a><p class="hint">Case '+esc(c.id)+'</p><h1 class="sm">'+esc(c.name)+'</h1><span class="st '+STAT[c.status]+'" style="display:inline-block">'+c.status+'</span>'+
+  '<div class="facts"><div><small>Category</small><b>'+esc(c.cat)+'</b></div><div><small>Report filed</small><b>'+fmt(c.filed)+'</b></div><div><small>Handled by</small><b>'+esc(c.div)+'</b></div><div><small>ID numbers</small><b>'+esc(c.ids.join(", "))+'</b></div><div><small>Known aliases</small><b>'+esc(c.aliases.join(", "))+'</b></div><div><small>Source</small><b>'+rd("{{Protected by the bureau}}")+'</b></div></div>'+
+  '<h2>Summary</h2><p class="prose">'+rd(c.sum)+'</p><h2>Timeline</h2><ol class="tl">'+c.ev.map(function(e){return '<li><time>'+fmt(e[0])+'</time>'+esc(e[1])+'</li>'}).join("")+'</ol><h2>Documents</h2><ul class="docs">'+c.docs.map(function(d){return '<li><a href="#'+c.id+'">'+esc(d[0])+'</a><span>'+d[1]+' · '+d[2]+'</span></li>'}).join("")+'</ul>'+
+  '<div class="callout" style="margin-top:34px">This is a public case file. Black bars mark details withheld to protect privacy, and the person who reported is never named. If something is inaccurate, <a href="#contact">ask the Records and Corrections Office</a> for a review.</div>',c.name)}
+function route(){var h=decodeURIComponent(location.hash.replace("#",""));
+  if(P[h]){nav(h);P[h]()}else if(h){nav("cases");detail(h)}}
+window.addEventListener("hashchange",route);
+document.getElementById("exit").addEventListener("click",function(){location.replace("https://www.wikipedia.org")});
+document.getElementById("theme").addEventListener("click",function(){var d=document.documentElement,dark=getComputedStyle(d).colorScheme.indexOf("dark")>-1;d.setAttribute("data-theme",dark?"light":"dark")});
+route();
+</script>
+</body>
+</html>
